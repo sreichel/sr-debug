@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sr_Debug>
+            <version>0.0.1</version>
+        </Sr_Debug>
+    </modules>
+    <global>
+        <helpers>
+            <sr_debug>
+                <class>Sr_Debug_Helper</class>
+            </sr_debug>
+        </helpers>
+        <models>
+            <sr_debug>
+                <class>Sr_Debug_Model</class>
+            </sr_debug>
+        </models>
+        <events>
+            <model_save_before>
+                <observers>
+                    <sr_debug_log_event_prefix>
+                        <class>sr_debug/observer</class>
+                        <method>logEventPrefix</method>
+                    </sr_debug_log_event_prefix>
+                </observers>
+            </model_save_before>
+        </events>
+    </global>
+</config>

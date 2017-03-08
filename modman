@@ -1,0 +1,5 @@
+src/app/code/local/Sr/Debug         app/code/local/Sr/Debug/
+src/app/etc/modules/Sr_Debug.xml    app/etc/modules/Sr_Debug.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Cache cleared"
