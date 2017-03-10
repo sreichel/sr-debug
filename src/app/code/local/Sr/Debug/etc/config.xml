@@ -17,14 +17,43 @@
             </sr_debug>
         </models>
         <events>
-            <model_save_before>
+            <core_abstract_load_before>
                 <observers>
-                    <sr_debug_log_event_prefix>
+                    <sr_debug_log_event_core_abstract>
                         <class>sr_debug/observer</class>
                         <method>logEventPrefix</method>
-                    </sr_debug_log_event_prefix>
+                    </sr_debug_log_event_core_abstract>
                 </observers>
-            </model_save_before>
+            </core_abstract_load_before>
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <sr_debug_log_event_prefix_eav_collection>
+                        <class>sr_debug/observer</class>
+                        <method>logEventPrefixCollection</method>
+                    </sr_debug_log_event_prefix_eav_collection>
+                </observers>
+            </eav_collection_abstract_load_before>
+            <adminhtml_block_html_before>
+                <observers>
+                    <sr_debug_log_event_prefix_block_html>
+                        <class>sr_debug/observer</class>
+                        <method>logEventPrefixBlock</method>
+                    </sr_debug_log_event_prefix_block_html>
+                </observers>
+            </adminhtml_block_html_before>
         </events>
     </global>
+    <default>
+        <dev>
+            <event_prefix_log_model>
+                <active>1</active>
+            </event_prefix_log_model>
+            <event_prefix_log_collection>
+                <active>1</active>
+            </event_prefix_log_collection>
+            <event_prefix_log_block>
+                <active>0</active>
+            </event_prefix_log_block>
+        </dev>
+    </default>
 </config>
