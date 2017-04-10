@@ -55,12 +55,14 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
         'Mage_Downloadable_Model_Link_Purchased_Item',
         'Mage_Eav_Model_Entity_Attribute_Group',
         'Mage_Eav_Model_Entity_Store',
+        'Mage_Eav_Model_Entity_Type',
         'Mage_GiftMessage_Model_Message',
         'Mage_Index_Model_Event',
         'Mage_Index_Model_Process',
         'Mage_Log_Model_Customer',
         'Mage_Log_Model_Visitor',
         'Mage_Oauth_Model_Consumer',
+        'Mage_Persistent_Model_Session',
         'Mage_Poll_Model_Poll',
         'Mage_Poll_Model_Poll_Answer',
         'Mage_Poll_Model_Poll_Vote',
@@ -89,10 +91,18 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
 
     private static $collection = array(
         'Mage_Catalog_Model_Resource_Collection_Abstract',
+        'Mage_Catalog_Model_Resource_Category_Collection',
+        'Mage_Catalog_Model_Resource_Product_Collection',
+        'Mage_Catalog_Model_Resource_Product_Compare_Item_Collection',
+        'Mage_Catalog_Model_Resource_Product_Link_Product_Collection',
+        'Mage_Catalog_Model_Resource_Product_Type_Configurable_Product_Collection',
         'Mage_Customer_Model_Resource_Address_Collection',
         'Mage_Customer_Model_Resource_Customer_Collection',
         'Mage_Customer_Model_Resource_Wishlist_Collection',
         'Mage_Eav_Model_Entity_Collection',
+        'Mage_Reports_Model_Resource_Product_Index_Compared_Collection',
+        'Mage_Reports_Model_Resource_Product_Index_Viewed_Collection',
+        'Mage_Review_Model_Resource_Review_Product_Collection',
         'Mage_Sales_Model_Entity_Order_Collection',
         'Mage_Sales_Model_Entity_Order_Address_Collection',
         'Mage_Sales_Model_Entity_Order_Creditmemo_Collection',
@@ -114,6 +124,7 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
         'Mage_Sales_Model_Entity_Quote_Address_Rate_Collection',
         'Mage_Sales_Model_Entity_Quote_Item_Collection',
         'Mage_Sales_Model_Entity_Quote_Payment_Collection',
+        'Mage_Tag_Model_Resource_Product_Collection'
     );
 
     private static $adminblock = array(
