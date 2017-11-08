@@ -139,7 +139,7 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
     public function logEventPrefix(Varien_Event_Observer $observer)
     {
         $object = $observer->getEvent()->getObject();
-        $this->_log(get_class($object), self::LOG_MODEL);
+        $this->_log($object, self::LOG_MODEL);
     }
 
     /**
@@ -151,7 +151,7 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
     public function logEventPrefixCollection(Varien_Event_Observer $observer)
     {
         $object = $observer->getEvent()->getCollection();
-        $this->_log(get_class($object), self::LOG_COLLECTION);
+        $this->_log($object, self::LOG_COLLECTION);
     }
 
     /**
@@ -163,7 +163,7 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
     public function logEventPrefixBlock(Varien_Event_Observer $observer)
     {
         $object = $observer->getEvent()->getBlock();
-        $this->_log(get_class($object), self::LOG_ADMINBLOCK);
+        $this->_log($object, self::LOG_ADMINBLOCK);
     }
 
     /**
@@ -172,9 +172,10 @@ class Sr_Debug_Model_Observer extends Mage_Core_Model_Observer
      * @param string $class
      * @param string $type
      */
-    private function _log($class, $type)
+    private function _log($object, $type)
     {
         if (Mage::getStoreConfigFlag('dev/event_prefix_log_' . $type . '/active')) {
+            $class = get_class($object);
             if (!in_array($class, self::$$type)) {
                 if (substr($class, 0, 5) === 'Mage_') {
                     Mage::log($class, null, "event-prefix-{$type}.log", true);
